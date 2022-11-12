@@ -24,8 +24,6 @@ Provided below is a list of the main features:
 
 ## Requirements
 
-Unless you are downloading a [pre-built release](https://github.com/kermado/NeuralBot/releases/download/v1.0/NeuralBot.zip), you must install the following requirements in order to use the included OpenCV detector:
-
 * [OpenCV 4.4.0](https://opencv.org/releases/)
 * [NVIDIA CUDA Toolkit 10.0](https://developer.nvidia.com/cuda-toolkit-archive)
 * [NVIDIA cuDNN 7.0](https://developer.nvidia.com/rdp/cudnn-archive)
@@ -47,12 +45,6 @@ The GDI screen grabber uses the Win32 GDI API. This seems to be pretty efficient
 #### DirectX Grabber
 
 The DirectX screen grabber uses the Windows Desktop Duplication API. This is supposedly the most efficient method, though the GDI method appears to be more efficient in practice. One important difference is that this method captures from the screen rather than the process main window. You may therefore need to disable ESP rendering in order to avoid confusing the neural network.
-
-A pre-built binary for the DirectX grabber is included, though the complete [source code](https://github.com/kermado/DXGrabber) is available.
-
-### Object Detection
-
-The object detector is responsible for identifying potential targets from an image. The included detector uses the OpenCV library to perform object detection using a neural network. You must provide a configuration (.cfg) file and associated model (.weights) file in the Darknet format. Note that the aimbot requires the object detection to run at a high framerate (> 100fps) for good results. The YOLOv4 architecture is recommended with a input resolution of 512x512. It is possible to use a larger screen capture area, though the accuracy of the trained neural network may be adversely affected. The included pre-built OpenCV detector supports NVIDIA Pascal and Turing cards only, though the complete [source code](https://github.com/kermado/Detector) is available.
 
 ### Object Tracker
 
